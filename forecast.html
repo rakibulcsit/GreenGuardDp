@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Weather & AQI Forecast</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="forecast.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation (Same design as homepage.html) -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item active"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header (Same design as homepage.html) -->
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile" style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <!-- Search Section (Same design as homepage.html) -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <!-- Page Specific Header Area -->
+        <div class="forecast-header">
+            <div class="page-title-badge" style="margin-bottom: 0;">Weekly Climate Outlook</div>
+            
+            <!-- Weather / AQI Mode Toggles -->
+            <div class="forecast-tabs">
+                <button class="forecast-tab-btn active" id="tab-weather">Weather Forecast</button>
+                <button class="forecast-tab-btn" id="tab-aqi">Air Quality Forecast</button>
+            </div>
+        </div>
+
+        <!-- Forecast Grid Layout -->
+        <div class="forecast-layout">
+            <!-- Left Side: 7-Day Forecast list -->
+            <section class="forecast-cards-card">
+                <h3 id="forecast-type-title"><i class="fa-solid fa-calendar-week" style="color:var(--primary-green)"></i> 7-Day Weather Outlook</h3>
+                <div class="days-list" id="days-container">
+                    <!-- Dynamic rendering done via JS. Server fallback/Static items template: -->
+                    <!-- Day 1 (Active) -->
+                    <div class="day-row-item active" onclick="selectDay(0)">
+                        <span class="day-name">Thursday (Today)</span>
+                        <span class="day-icon">☁️</span>
+                        <span class="day-temp">32°C<span class="low">26°C</span></span>
+                        <span class="day-precip"><i class="fa-solid fa-umbrella"></i> 40%</span>
+                        <span class="day-humidity"><i class="fa-solid fa-droplet"></i> 65%</span>
+                    </div>
+                    <!-- Day 2 -->
+                    <div class="day-row-item" onclick="selectDay(1)">
+                        <span class="day-name">Friday</span>
+                        <span class="day-icon">⛈️</span>
+                        <span class="day-temp">30°C<span class="low">25°C</span></span>
+                        <span class="day-precip"><i class="fa-solid fa-umbrella"></i> 80%</span>
+                        <span class="day-humidity"><i class="fa-solid fa-droplet"></i> 85%</span>
+                    </div>
+                    <!-- Day 3 -->
+                    <div class="day-row-item" onclick="selectDay(2)">
+                        <span class="day-name">Saturday</span>
+                        <span class="day-icon">🌧️</span>
+                        <span class="day-temp">29°C<span class="low">24°C</span></span>
+                        <span class="day-precip"><i class="fa-solid fa-umbrella"></i> 90%</span>
+                        <span class="day-humidity"><i class="fa-solid fa-droplet"></i> 90%</span>
+                    </div>
+                    <!-- Day 4 -->
+                    <div class="day-row-item" onclick="selectDay(3)">
+                        <span class="day-name">Sunday</span>
+                        <span class="day-icon">☀️</span>
+                        <span class="day-temp">33°C<span class="low">27°C</span></span>
+                        <span class="day-precip"><i class="fa-solid fa-umbrella"></i> 10%</span>
+                        <span class="day-humidity"><i class="fa-solid fa-droplet"></i> 55%</span>
+                    </div>
+                    <!-- Day 5 -->
+                    <div class="day-row-item" onclick="selectDay(4)">
+                        <span class="day-name">Monday</span>
+                        <span class="day-icon">☀️</span>
+                        <span class="day-temp">34°C<span class="low">28°C</span></span>
+                        <span class="day-precip"><i class="fa-solid fa-umbrella"></i> 5%</span>
+                        <span class="day-humidity"><i class="fa-solid fa-droplet"></i> 50%</span>
+                    </div>
+                    <!-- Day 6 -->
+                    <div class="day-row-item" onclick="selectDay(5)">
+                        <span class="day-name">Tuesday</span>
+                        <span class="day-icon">⛅</span>
+                        <span class="day-temp">33°C<span class="low">26°C</span></span>
+                        <span class="day-precip"><i class="fa-solid fa-umbrella"></i> 25%</span>
+                        <span class="day-humidity"><i class="fa-solid fa-droplet"></i> 60%</span>
+                    </div>
+                    <!-- Day 7 -->
+                    <div class="day-row-item" onclick="selectDay(6)">
+                        <span class="day-name">Wednesday</span>
+                        <span class="day-icon">☁️</span>
+                        <span class="day-temp">31°C<span class="low">25°C</span></span>
+                        <span class="day-precip"><i class="fa-solid fa-umbrella"></i> 50%</span>
+                        <span class="day-humidity"><i class="fa-solid fa-droplet"></i> 70%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Detailed metrics for selected day -->
+            <section class="details-sidebar-card">
+                <h3><i class="fa-solid fa-chart-line"></i> Daily Detailed Outlook</h3>
+                <div id="details-container">
+                    <div class="selected-day-hero">
+                        <div class="hero-icon" id="detail-hero-icon">☁️</div>
+                        <h2 id="detail-hero-val">32°C</h2>
+                        <p id="detail-hero-desc">Partly Cloudy</p>
+                    </div>
+
+                    <div class="metrics-list" id="detail-metrics">
+                        <!-- Temp Range -->
+                        <div class="metric-row">
+                            <span><i class="fa-solid fa-temperature-half"></i> Temp Range</span>
+                            <strong id="metric-temp">26°C - 32°C</strong>
+                        </div>
+                        <!-- Precipitation -->
+                        <div class="metric-row">
+                            <span><i class="fa-solid fa-cloud-showers-heavy"></i> Rain Probability</span>
+                            <strong id="metric-precip">40%</strong>
+                        </div>
+                        <!-- Humidity -->
+                        <div class="metric-row">
+                            <span><i class="fa-solid fa-droplet"></i> Avg Humidity</span>
+                            <strong id="metric-humidity">65%</strong>
+                        </div>
+                        <!-- Wind Speed -->
+                        <div class="metric-row">
+                            <span><i class="fa-solid fa-wind"></i> Wind Speed</span>
+                            <strong id="metric-wind">12 km/h</strong>
+                        </div>
+                        <!-- UV Index -->
+                        <div class="metric-row">
+                            <span><i class="fa-solid fa-sun"></i> UV Index</span>
+                            <strong id="metric-uv">Moderate (5)</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for Forecast functionality -->
+    <script src="utils.js"></script>
+    <script src="forecast.js"></script>
+</body>
+</html>

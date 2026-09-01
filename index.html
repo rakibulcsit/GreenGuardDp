@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="splash-screen">
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo-box">
+                <svg class="logo-svg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Shield Outline -->
+                    <path d="M50 10 L15 25 V65 C15 90 35 108 50 115 C65 108 85 90 85 65 V25 L50 10 Z" fill="none"
+                        stroke="#a3e635" stroke-width="6" stroke-linejoin="round" />
+                    <!-- Leaf Shape -->
+                    <path d="M50 32 C38 45 38 68 50 88 C62 68 62 45 50 32 Z" fill="#a3e635" />
+                    <!-- Leaf center line -->
+                    <path d="M50 32 V88" stroke="#0e382b" stroke-width="3" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <h1>GreenGuard</h1>
+
+            <p class="subtitle">
+                Smart Environmental Monitoring
+            </p>
+        </div>
+
+        <!-- Environment Image -->
+        <div class="image-container">
+            <img src="environment.png" class="environment" alt="Environment Illustration">
+        </div>
+
+        <!-- Tagline -->
+        <h2>
+            Live Environment, Better Tomorrow
+        </h2>
+
+        <!-- Loading -->
+        <p class="loading-text">
+            Loading...
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+    </div>
+
+    <!-- Redirection Script -->
+    <script>
+        window.addEventListener('load', () => {
+            // Redirect to welcome.html after 3 seconds (matching loading bar)
+            setTimeout(() => {
+                window.location.href = 'welcome.html';
+            }, 3000);
+        });
+    </script>
+
+</body>
+
+</html>

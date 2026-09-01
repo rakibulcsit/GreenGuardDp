@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Smart Eco Tips</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="tips.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation (Same design as homepage.html) -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item active"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header (Same design as homepage.html) -->
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile" style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <!-- Search Section (Same design as homepage.html) -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <!-- Page Specific Title Badge -->
+        <div class="page-title-badge">Eco Action Platform</div>
+
+        <!-- Tips Layout Grid -->
+        <div class="tips-grid">
+            <!-- Left Side: Daily Eco Tips -->
+            <section class="tips-list-card">
+                <h3><i class="fa-solid fa-lightbulb" style="color:var(--primary-green)"></i> Daily Environmental Tips</h3>
+                
+                <!-- Tip 1 -->
+                <div class="tip-box-item">
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-shower"></i>
+                    </div>
+                    <div class="tip-details">
+                        <h4>Conserve Household Water</h4>
+                        <p>Shorten your daily shower time by just 2 minutes or turn off the faucet when brushing teeth to save over 100 gallons of clean water per week.</p>
+                        <span class="tip-category-tag">Water</span>
+                    </div>
+                </div>
+
+                <!-- Tip 2 -->
+                <div class="tip-box-item">
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+                    <div class="tip-details">
+                        <h4>Eliminate Phantom Power Draw</h4>
+                        <p>Unplug phone chargers, microwaves, and standby television boxes when heading out. They continue drawing power even when inactive, contributing to your carbon footprints.</p>
+                        <span class="tip-category-tag">Energy</span>
+                    </div>
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="tip-box-item">
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                    <div class="tip-details">
+                        <h4>Transition to Reusables</h4>
+                        <p>Avoid single-use paper cups, plastic grocery bags, and plastic water bottles. Keeping a cloth canvas bag and reusable flasks drastically minimizes municipal landfill waste volume.</p>
+                        <span class="tip-category-tag">Waste</span>
+                    </div>
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="tip-box-item">
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-bicycle"></i>
+                    </div>
+                    <div class="tip-details">
+                        <h4>Green Transportation Practices</h4>
+                        <p>Try to walk, ride a bicycle, or utilize public metro transits for short commutes. This decreases individual carbon emissions by nearly 85% compared to private fuel vehicles.</p>
+                        <span class="tip-category-tag">Transit</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Green Checklist & Score Tracker -->
+            <section class="green-checklist-card">
+                <!-- Eco Score tracker -->
+                <div class="eco-score-tracker">
+                    <p>YOUR GREEN LEVEL</p>
+                    <h2>Eco Explorer</h2>
+                    <p style="margin-top: 10px;"><strong id="pts-count">15</strong> / 100 Points Earned</p>
+                    <div class="score-progress-bar">
+                        <div class="score-progress-fill" id="pts-progress" style="width: 15%;"></div>
+                    </div>
+                </div>
+
+                <!-- Checklist title -->
+                <h3><i class="fa-solid fa-list-check" style="color:var(--primary-green)"></i> Today's Eco Actions</h3>
+                <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 15px;">Check off actions you did today to earn green points and level up!</p>
+
+                <!-- Checklist boxes -->
+                <div class="checklist-items">
+                    <!-- Action 1 -->
+                    <label class="action-checkbox-item" id="chk-item-1">
+                        <input type="checkbox" class="action-chk" data-points="15" onchange="toggleActionItem('chk-item-1')">
+                        <span class="action-checkbox-text">Unplugged standby chargers (+15 pts)</span>
+                    </label>
+
+                    <!-- Action 2 -->
+                    <label class="action-checkbox-item" id="chk-item-2">
+                        <input type="checkbox" class="action-chk" data-points="10" onchange="toggleActionItem('chk-item-2')">
+                        <span class="action-checkbox-text">Used reusable grocery bag (+10 pts)</span>
+                    </label>
+
+                    <!-- Action 3 -->
+                    <label class="action-checkbox-item" id="chk-item-3">
+                        <input type="checkbox" class="action-chk" data-points="20" onchange="toggleActionItem('chk-item-3')">
+                        <span class="action-checkbox-text">Walked/cycled short trip (+20 pts)</span>
+                    </label>
+
+                    <!-- Action 4 -->
+                    <label class="action-checkbox-item" id="chk-item-4">
+                        <input type="checkbox" class="action-chk" data-points="15" onchange="toggleActionItem('chk-item-4')">
+                        <span class="action-checkbox-text">Turned off AC/unused lights (+15 pts)</span>
+                    </label>
+
+                    <!-- Action 5 -->
+                    <label class="action-checkbox-item" id="chk-item-5">
+                        <input type="checkbox" class="action-chk" data-points="10" onchange="toggleActionItem('chk-item-5')">
+                        <span class="action-checkbox-text">Took short shower < 5 mins (+10 pts)</span>
+                    </label>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for Eco Tips handling -->
+    <script src="tips.js"></script>
+</body>
+</html>

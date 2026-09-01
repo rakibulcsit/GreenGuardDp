@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Air Quality Monitoring</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="airquality.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation (Same design as homepage.html) -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item active"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header (Same design as homepage.html) -->
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile" style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <!-- Search Section (Same design as homepage.html) -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <!-- Page Specific Title Badge -->
+        <div class="page-title-badge">Air Quality Metrics</div>
+
+        <!-- AQI Overview Section -->
+        <section class="aqi-overview-card">
+            <div class="aqi-details-left">
+                <h3>Air Quality Index</h3>
+                <p class="location" id="aqi-location-container"><i class="fa-solid fa-location-dot"></i> <span id="aqi-city-text">Dhaka, Bangladesh</span> | <span id="current-time">20 May 2025 | 02:30 PM</span></p>
+                <div class="aqi-status-badge poor" id="aqi-status">Poor</div>
+                <div class="aqi-summary-text" id="aqi-summary">
+                    Air quality is unhealthy for sensitive groups. People with respiratory or heart diseases, the elderly, and children should limit prolonged outdoor exertion.
+                </div>
+            </div>
+
+            <div class="aqi-gauge-center">
+                <!-- Large AQI Circle Gauge -->
+                <div class="large-aqi-gauge">
+                    <svg viewBox="0 0 180 180">
+                        <circle class="bg-circle" cx="90" cy="90" r="72"></circle>
+                        <circle class="progress-circle" cx="90" cy="90" r="72" id="gauge-fill"></circle>
+                    </svg>
+                    <div class="aqi-number">
+                        <h1 id="aqi-value-text">142</h1>
+                        <p>AQI Index</p>
+                    </div>
+                </div>
+
+                <!-- AQI Scale Bar Section matching the provided picture -->
+                <div class="aqi-scale-container">
+                    <div class="aqi-scale-bar-wrapper">
+                        <div class="aqi-scale-bar"></div>
+                        <div class="aqi-scale-indicator" id="aqi-scale-indicator"></div>
+                    </div>
+                    <div class="aqi-scale-labels">
+                        <div class="scale-label-col good">
+                            <span class="range">0-50</span>
+                            <span class="label">Good</span>
+                        </div>
+                        <div class="scale-label-col moderate">
+                            <span class="range">51-100</span>
+                            <span class="label">Moderate</span>
+                        </div>
+                        <div class="scale-label-col sensitive">
+                            <span class="range">101-150</span>
+                            <span class="label">Unhealthy for<br>Sensitive Groups</span>
+                        </div>
+                        <div class="scale-label-col unhealthy">
+                            <span class="range">151-200</span>
+                            <span class="label">Unhealthy</span>
+                        </div>
+                        <div class="scale-label-col very-unhealthy">
+                            <span class="range">201+</span>
+                            <span class="label">Very Unhealthy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pollutant Values Section -->
+        <section class="pollutants-section">
+            <h3><i class="fa-solid fa-flask"></i> Pollutants Concentration</h3>
+            <div class="pollutant-grid">
+                <!-- PM2.5 -->
+                <div class="pollutant-card">
+                    <span class="pollutant-name">PM2.5</span>
+                    <span class="val" id="pm25-val">52.4</span>
+                    <span class="unit">µg/m³</span>
+                    <div class="status-bar">
+                        <div class="status-bar-fill warning" style="width: 75%;" id="pm25-fill"></div>
+                    </div>
+                </div>
+                <!-- PM10 -->
+                <div class="pollutant-card">
+                    <span class="pollutant-name">PM10</span>
+                    <span class="val" id="pm10-val">88.1</span>
+                    <span class="unit">µg/m³</span>
+                    <div class="status-bar">
+                        <div class="status-bar-fill safe" style="width: 58%;" id="pm10-fill"></div>
+                    </div>
+                </div>
+                <!-- NO2 -->
+                <div class="pollutant-card">
+                    <span class="pollutant-name">NO₂</span>
+                    <span class="val" id="no2-val">24.5</span>
+                    <span class="unit">µg/m³</span>
+                    <div class="status-bar">
+                        <div class="status-bar-fill safe" style="width: 35%;" id="no2-fill"></div>
+                    </div>
+                </div>
+                <!-- O3 -->
+                <div class="pollutant-card">
+                    <span class="pollutant-name">O₃</span>
+                    <span class="val" id="o3-val">112.0</span>
+                    <span class="unit">µg/m³</span>
+                    <div class="status-bar">
+                        <div class="status-bar-fill safe" style="width: 48%;" id="o3-fill"></div>
+                    </div>
+                </div>
+                <!-- CO -->
+                <div class="pollutant-card">
+                    <span class="pollutant-name">CO</span>
+                    <span class="val" id="co-val">0.8</span>
+                    <span class="unit">mg/m³</span>
+                    <div class="status-bar">
+                        <div class="status-bar-fill safe" style="width: 20%;" id="co-fill"></div>
+                    </div>
+                </div>
+                <!-- SO2 -->
+                <div class="pollutant-card">
+                    <span class="pollutant-name">SO₂</span>
+                    <span class="val" id="so2-val">12.2</span>
+                    <span class="unit">µg/m³</span>
+                    <div class="status-bar">
+                        <div class="status-bar-fill safe" style="width: 15%;" id="so2-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Advisories Section -->
+        <section class="advisories-section">
+            <h3><i class="fa-solid fa-circle-info"></i> Health Advisories & recommendations</h3>
+            <div class="advisory-grid">
+                <!-- Mask -->
+                <div class="advisory-card">
+                    <div class="advisory-icon warning" id="advisory-mask-icon">
+                        <i class="fa-solid fa-head-side-mask"></i>
+                    </div>
+                    <div class="advisory-content">
+                        <h4 id="advisory-mask-title">Wear a Mask Outdoors</h4>
+                        <p id="advisory-mask-desc">Sensitive groups are advised to wear a particulate respirator mask (N95 or equivalent) outdoors today.</p>
+                    </div>
+                </div>
+                <!-- Ventilation -->
+                <div class="advisory-card">
+                    <div class="advisory-icon warning" id="advisory-vent-icon">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <div class="advisory-content">
+                        <h4 id="advisory-vent-title">Close Windows and Doors</h4>
+                        <p id="advisory-vent-desc">Keep windows and doors closed to avoid clean indoor air mixing with unhealthy outdoor atmospheric particulates.</p>
+                    </div>
+                </div>
+                <!-- Outdoor Exercise -->
+                <div class="advisory-card">
+                    <div class="advisory-icon warning" id="advisory-exercise-icon">
+                        <i class="fa-solid fa-person-running"></i>
+                    </div>
+                    <div class="advisory-content">
+                        <h4 id="advisory-exercise-title">Reduce Outdoor Activities</h4>
+                        <p id="advisory-exercise-desc">Try to reduce heavy or prolonged exercise outdoors, particularly in high-traffic or heavily populated sectors.</p>
+                    </div>
+                </div>
+                <!-- Air Purifiers -->
+                <div class="advisory-card">
+                    <div class="advisory-icon safe" id="advisory-purifier-icon">
+                        <i class="fa-solid fa-house-laptop"></i>
+                    </div>
+                    <div class="advisory-content">
+                        <h4 id="advisory-purifier-title">Use Air Purifiers</h4>
+                        <p id="advisory-purifier-desc">If available, run indoor air purifiers on automated speed modes to keep particulate levels low inside your residence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript for dynamic weather updates and timestamp -->
+    <script src="utils.js"></script>
+    <script src="airquality.js"></script>
+</body>
+</html>

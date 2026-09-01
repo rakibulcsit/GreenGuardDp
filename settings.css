@@ -1,0 +1,254 @@
+/* ================= SETTINGS PAGE STYLES ================= */
+
+.main-content {
+    background-color: var(--bg-light);
+}
+
+.page-title-badge {
+    display: inline-block;
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+/* Settings Layout Grid */
+.settings-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+/* Settings Panel Card */
+.settings-card {
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    margin-bottom: 24px;
+}
+
+.settings-card:last-child {
+    margin-bottom: 0;
+}
+
+.settings-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
+}
+
+/* Settings Row items */
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.settings-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.settings-row:first-of-type {
+    padding-top: 0;
+}
+
+.settings-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.settings-info span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.settings-info p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Inputs and selectors */
+.settings-select {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    background: #ffffff;
+    min-width: 140px;
+    cursor: pointer;
+}
+
+.settings-select:focus {
+    border-color: var(--accent-green);
+}
+
+/* Custom Switch Toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .3s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-green);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* Danger Zone Cards */
+.danger-zone-card {
+    background: var(--card-bg);
+    border: 1px solid #fee2e2;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.02);
+}
+
+.danger-zone-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--alert-red);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #fee2e2;
+    padding-bottom: 12px;
+}
+
+.danger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #fee2e2;
+}
+
+.danger-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.danger-row:first-of-type {
+    padding-top: 0;
+}
+
+.btn-danger-outline {
+    background-color: transparent;
+    border: 1px solid var(--alert-red);
+    color: var(--alert-red);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-danger-outline:hover {
+    background-color: var(--alert-red);
+    color: #ffffff;
+}
+
+/* Profile card */
+.profile-card {
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.profile-avatar-container {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px auto;
+}
+
+.profile-avatar {
+    font-size: 80px;
+    color: var(--primary-green);
+    line-height: 1;
+}
+
+.profile-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.profile-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.profile-badge-green {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #e2f2ea;
+    color: var(--primary-green);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+}

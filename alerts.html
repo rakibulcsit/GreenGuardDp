@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Environmental Alerts</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="alerts.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation (Same design as homepage.html) -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item active"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header (Same design as homepage.html) -->
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile" style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <!-- Search Section (Same design as homepage.html) -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <!-- Page Specific Title Badge -->
+        <div class="page-title-badge">Security Alerts System</div>
+
+        <!-- Alerts Layout Grid -->
+        <div class="alerts-grid">
+            <!-- Left Side: Active Alerts -->
+            <section class="alerts-list-card">
+                <div class="card-header-flex">
+                    <h3><i class="fa-solid fa-triangle-exclamation" style="color:var(--alert-red)"></i> Active Environment Alerts</h3>
+                    <span class="alerts-count" id="active-alerts-count">3</span>
+                </div>
+                
+                <div id="alerts-container">
+                    <!-- PM2.5 Danger Alert -->
+                    <div class="alert-item-box danger" id="alert-1">
+                        <div class="alert-item-icon">
+                            <i class="fa-solid fa-smog"></i>
+                        </div>
+                        <div class="alert-item-details">
+                            <h4>Critical Air Quality Index Exceedance</h4>
+                            <p>AQI index has exceeded 140 in Dhaka. Fine particulate matter (PM2.5) levels are elevated. Health risk is high for kids, the elderly, and asthma patients.</p>
+                            <div class="alert-meta">
+                                <span><i class="fa-solid fa-location-dot"></i> Dhaka</span>
+                                <span><i class="fa-solid fa-clock"></i> Just Now</span>
+                            </div>
+                        </div>
+                        <button class="alert-action-btn" onclick="dismissAlert('alert-1')"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <!-- Heat Wave Warning Alert -->
+                    <div class="alert-item-box warning" id="alert-2">
+                        <div class="alert-item-icon">
+                            <i class="fa-solid fa-temperature-arrow-up"></i>
+                        </div>
+                        <div class="alert-item-details">
+                            <h4>Extreme Temperature Warning</h4>
+                            <p>A temperature of 32°C feels like 36°C. Keep hydrated, stay indoors during peak sunshine hours (12 PM - 3 PM), and avoid direct thermal exposure.</p>
+                            <div class="alert-meta">
+                                <span><i class="fa-solid fa-location-dot"></i> Dhaka</span>
+                                <span><i class="fa-solid fa-clock"></i> 2 Hours Ago</span>
+                            </div>
+                        </div>
+                        <button class="alert-action-btn" onclick="dismissAlert('alert-2')"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <!-- Rain Forecast Info Alert -->
+                    <div class="alert-item-box info" id="alert-3">
+                        <div class="alert-item-icon">
+                            <i class="fa-solid fa-cloud-showers-heavy"></i>
+                        </div>
+                        <div class="alert-item-details">
+                            <h4>Imminent Rain Advisory</h4>
+                            <p>Moderate convective cloud cover forming. High possibility of light to heavy rain showers in the evening. Keep an umbrella handy.</p>
+                            <div class="alert-meta">
+                                <span><i class="fa-solid fa-location-dot"></i> Dhaka</span>
+                                <span><i class="fa-solid fa-clock"></i> 5 Hours Ago</span>
+                            </div>
+                        </div>
+                        <button class="alert-action-btn" onclick="dismissAlert('alert-3')"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Side: Settings & Simulator -->
+            <div class="sidebar-cards-container">
+                <!-- Notifications Settings -->
+                <section class="alerts-panel-card">
+                    <h3><i class="fa-solid fa-sliders"></i> Alert Settings</h3>
+                    <div class="pref-row">
+                        <div class="pref-label">
+                            <span>Push Notifications</span>
+                            <small>Get instant screen popups</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="pref-row">
+                        <div class="pref-label">
+                            <span>SMS Notifications</span>
+                            <small>Receive text warning alerts</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="pref-row">
+                        <div class="pref-label">
+                            <span>Email Bulletins</span>
+                            <small>Weekly environmental summary</small>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Alert Simulator (Developer/Admin testing) -->
+                <section class="alerts-panel-card">
+                    <h3><i class="fa-solid fa-vial"></i> Alert Simulator</h3>
+                    <div class="simulator-form">
+                        <div class="form-group">
+                            <label for="sim-title">Alert Title</label>
+                            <input type="text" id="sim-title" placeholder="e.g. Thunderstorm Alert">
+                        </div>
+                        <div class="form-group">
+                            <label for="sim-severity">Severity Level</label>
+                            <select id="sim-severity">
+                                <option value="danger">Danger (Red)</option>
+                                <option value="warning">Warning (Orange)</option>
+                                <option value="info">Information (Blue)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sim-desc">Description</label>
+                            <input type="text" id="sim-desc" placeholder="Details about this alert...">
+                        </div>
+                        <button class="btn-trigger-alert" id="btn-trigger-sim">
+                            <i class="fa-solid fa-bullhorn"></i> Trigger Alert
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Alerts handling -->
+    <script src="utils.js"></script>
+    <script src="alerts.js"></script>
+</body>
+</html>

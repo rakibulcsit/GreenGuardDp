@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Settings Panel</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation (Same design as homepage.html) -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item active"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header (Same design as homepage.html) -->
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span
+                    style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile"
+                    style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <!-- Search Section (Same design as homepage.html) -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <!-- Page Specific Header Area -->
+        <div class="page-title-badge">System Configuration Control</div>
+
+        <!-- Settings Layout Grid -->
+        <div class="settings-grid">
+            <!-- Left Column: Preference Panels -->
+            <div>
+                <!-- Preferences Card -->
+                <section class="settings-card">
+                    <h3><i class="fa-solid fa-sliders"></i> General Preferences</h3>
+
+                    <!-- Theme Mode -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <span>Dark Theme Mode</span>
+                            <p>Toggle high-contrast dark user interface</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-dark-mode">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Temp Unit selection -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <span>Temperature Scale Unit</span>
+                            <p>Display temperature metrics in Celsius or Fahrenheit</p>
+                        </div>
+                        <select class="settings-select" id="select-temp-unit">
+                            <option value="celsius">Celsius (°C)</option>
+                            <option value="fahrenheit">Fahrenheit (°F)</option>
+                        </select>
+                    </div>
+
+                    <!-- Auto Refresh Interval -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <span>Sensors Refresh Rate</span>
+                            <p>Interval to update weather and AQI monitoring sensors</p>
+                        </div>
+                        <select class="settings-select" id="select-refresh-rate">
+                            <option value="auto">Automatic (Live)</option>
+                            <option value="5m">Every 5 Minutes</option>
+                            <option value="15m">Every 15 Minutes</option>
+                            <option value="1h">Every 1 Hour</option>
+                        </select>
+                    </div>
+                </section>
+
+                <!-- Danger Zone Card -->
+                <section class="danger-zone-card">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> Danger Zone</h3>
+
+                    <!-- Reset points -->
+                    <div class="danger-row">
+                        <div class="settings-info">
+                            <span>Reset Eco Checklist Points</span>
+                            <p>Wipe today's green action score back to 0 points</p>
+                        </div>
+                        <button class="btn-danger-outline" id="btn-reset-points">Reset Points</button>
+                    </div>
+
+                    <!-- Wipe activity logs -->
+                    <div class="danger-row">
+                        <div class="settings-info">
+                            <span>Clear Activity Registry Logs</span>
+                            <p>Delete all search and activity logs from system database</p>
+                        </div>
+                        <button class="btn-danger-outline" id="btn-clear-logs">Wipe Logs</button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: User Profile Panel -->
+            <div>
+                <section class="profile-card">
+                    <div class="profile-avatar-container">
+                        <div class="profile-avatar">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
+                    </div>
+                    <h4>Environmental Monitor</h4>
+                    <p>dhaka.monitor@greenguard.org</p>
+                    <div class="profile-badge-green" id="profile-rank">Eco Explorer</div>
+
+                    <div style="margin-top: 25px; text-align: left; font-size: 13px; color: var(--text-muted);">
+                        <p style="margin-bottom: 10px;"><strong>Rank Progression:</strong></p>
+                        <p style="margin-bottom: 5px;"><i class="fa-solid fa-award"
+                                style="color:#a3e635; margin-right: 8px;"></i> Eco Explorer (0 - 39 pts)</p>
+                        <p style="margin-bottom: 5px;"><i class="fa-solid fa-shield-halved"
+                                style="color:var(--primary-green); margin-right: 8px;"></i> Green Hero (40 - 69 pts)</p>
+                        <p><i class="fa-solid fa-earth-americas" style="color:#2196f3; margin-right: 8px;"></i> Planet
+                            Champion (70+ pts)</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Settings handling -->
+    <script src="settings.js"></script>
+</body>
+
+</html>

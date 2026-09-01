@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Weather Monitoring Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation (Same design as homepage.html) -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item active"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header (Same design as homepage.html) -->
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile" style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <!-- Search Section (Same design as homepage.html) -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <!-- Page Specific Title Badge -->
+        <div class="page-title-badge">Live Climate Metrics</div>
+
+        <!-- Weather Details Section -->
+        <section class="weather-details">
+            <div class="weather-left">
+                <h3>Weather Details</h3>
+                <p class="location" id="weather-city">Dhaka, Bangladesh</p>
+                <div class="temp-main">
+                    <h1 id="weather-temp-val">32°c</h1>
+                    <p class="status" id="weather-status-val">Partly Cloudy</p>
+                </div>
+            </div>
+
+            <div class="weather-center">
+                <!-- Weather Status Icon -->
+                <div class="weather-icon-cloud" id="weather-icon-el">☀️☁️</div>
+            </div>
+
+            <div class="weather-right">
+                <p class="date-time" id="current-time">20 May 2025 | 02:30 PM</p>
+                <ul class="stats-list">
+                    <li><span><i class="fa-solid fa-temperature-half"></i> Feels Like</span> <strong id="weather-feels-val">36°c</strong></li>
+                    <li><span><i class="fa-solid fa-droplet"></i> Humidity</span> <strong id="weather-humidity-val">65%</strong></li>
+                    <li><span><i class="fa-solid fa-wind"></i> Wind Speed</span> <strong id="weather-wind-val">12 km/h</strong></li>
+                    <li><span><i class="fa-solid fa-gauge-high"></i> Pressure</span> <strong id="weather-pressure-val">1012 hPa</strong></li>
+                    <li><span><i class="fa-solid fa-eye"></i> Visibility</span> <strong id="weather-visibility-val">8 km</strong></li>
+                    <li><span><i class="fa-solid fa-cloud"></i> Cloud Cover</span> <strong id="weather-cloud-val">40%</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Hourly Forecast Section -->
+        <section class="hourly-forecast">
+            <h3>Hourly Forecast</h3>
+            <div class="forecast-cards" id="hourly-cards-container">
+                <div class="card"><span>Now</span><div class="icon">☁️</div><strong>32°C</strong></div>
+                <div class="card"><span>3 PM</span><div class="icon">☁️</div><strong>31°C</strong></div>
+                <div class="card"><span>4 PM</span><div class="icon">☀️</div><strong>30°C</strong></div>
+                <div class="card"><span>5 PM</span><div class="icon">☀️</div><strong>29°C</strong></div>
+                <div class="card"><span>6 PM</span><div class="icon">☀️</div><strong>28°C</strong></div>
+                <div class="card"><span>7 PM</span><div class="icon">☀️</div><strong>27°C</strong></div>
+                <div class="card"><span>8 PM</span><div class="icon">☀️</div><strong>26°C</strong></div>
+            </div>
+        </section>
+
+        <!-- Additional Info Section -->
+        <section class="additional-info">
+            <h3>Additional Info</h3>
+            <div class="info-grid">
+                <div class="info-box">
+                    <span class="label">Sunrise</span>
+                    <span class="value" id="sunrise-val"><i class="fa-solid fa-sun text-yellow"></i> 05:24 AM</span>
+                </div>
+                <div class="info-box">
+                    <span class="label">Sunset</span>
+                    <span class="value" id="sunset-val"><i class="fa-solid fa-moon text-orange"></i> 06:24 PM</span>
+                </div>
+                <div class="info-box">
+                    <span class="label">UV Index</span>
+                    <span class="value" id="uv-val"><i class="fa-solid fa-circle text-green"></i> Moderate</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript for dynamic weather updates and timestamp -->
+    <script src="utils.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>

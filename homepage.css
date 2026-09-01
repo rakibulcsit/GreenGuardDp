@@ -1,0 +1,430 @@
+/* Color Palette & Variables */
+:root {
+    --primary-dark: #063c24;
+    --primary-green: #0a6c3f;
+    --accent-green: #119955;
+    --bg-light: #f4f7f5;
+    --card-bg: #ffffff;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --alert-red: #d9383a;
+    --alert-orange: #e67e22;
+    --alert-blue: #2980b9;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, var(--primary-dark) 0%, #032516 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.logo-area i {
+    font-size: 28px;
+    color: #4ade80;
+}
+
+.logo-text h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.logo-text p {
+    font-size: 10px;
+    color: #a7f3d0;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.menu-item.active a, .menu-item a:hover {
+    background-color: var(--primary-green);
+    color: #ffffff;
+}
+
+.sidebar-footer {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sidebar-footer i {
+    color: #4ade80;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.sidebar-footer p {
+    font-size: 11px;
+    color: #a7f3d0;
+}
+
+/* Main Content Layout */
+.main-content {
+    margin-left: 260px;
+    flex-grow: 1;
+    padding: 24px;
+}
+
+/* Header Layout */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.tagline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.tagline i {
+    color: var(--accent-green);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-toggle, .user-profile {
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+/* Search Bar Area */
+.search-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.search-box {
+    display: flex;
+    flex-grow: 1;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.search-box input {
+    border: none;
+    padding: 12px 16px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 0 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.location-btn {
+    background-color: var(--accent-green);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+/* Grid Framework for Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Weather Component */
+.weather-card .location-info {
+    float: right;
+    text-align: right;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.weather-status i {
+    font-size: 64px;
+    color: #f1c40f;
+}
+
+.weather-status p {
+    margin-top: 5px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.temp-display h1 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.temp-display p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+.detail-item {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.detail-item i {
+    font-size: 20px;
+    color: var(--primary-green);
+}
+
+.detail-info p {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.detail-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* AQI Circular Gauge Component */
+.aqi-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.aqi-gauge {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aqi-gauge svg {
+    width: 300%;
+    height: 300%;
+    transform: rotate(-90deg);
+}
+
+.aqi-gauge circle {
+    fill: none;
+    stroke-width: 20;
+    stroke-linecap: round;
+}
+
+.aqi-gauge .bg-circle {
+    stroke: #edf2f7;
+}
+
+.aqi-gauge .progress-circle {
+    stroke: #e67e22; /* Assigned color code for 'Poor' metric */
+    stroke-dasharray: 339.3;
+    stroke-dashoffset: 108;
+}
+
+.aqi-value {
+    position: absolute;
+    text-align: center;
+}
+
+.aqi-value h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.aqi-value p {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.aqi-status h3 {
+    font-size: 22px;
+    color: #e67e22;
+    margin-bottom: 5px;
+}
+
+.aqi-status p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.aqi-scale {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.scale-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #2ecc71, #f1c40f, #e67e22, #e74c3c, #9b59b6);
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Notification Alerts & Eco Tips Styles */
+.alert-item, .tip-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.alert-item:hover, .tip-item:hover {
+    transform: translateX(4px);
+}
+
+.alert-item { background-color: #fff5f5; border-left: 5px solid var(--alert-red); }
+.alert-item.warning { background-color: #fffaf0; border-left: 5px solid var(--alert-orange); }
+.alert-item.info { background-color: #f0f8ff; border-left: 5px solid var(--alert-blue); }
+
+.alert-item i { font-size: 20px; }
+.alert-item.danger i { color: var(--alert-red); }
+.alert-item.warning i { color: var(--alert-orange); }
+.alert-item.info i { color: var(--alert-blue); }
+
+.tip-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.tip-item i {
+    font-size: 18px;
+    color: var(--primary-green);
+    background: #e2f2ea;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.alert-text h4, .tip-text p {
+    font-weight: 500;
+}
+
+.alert-text p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.arrow-right {
+    margin-left: auto;
+    color: #cbd5e1;
+}

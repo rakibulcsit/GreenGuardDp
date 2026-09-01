@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - About Us</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation (Same design as homepage.html) -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item active"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Top Header (Same design as homepage.html) -->
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile" style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <!-- Search Section (Same design as homepage.html) -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <!-- Page Specific Header Area -->
+        <div class="page-title-badge">GreenGuard Information Bureau</div>
+
+        <!-- About Us Grid Layout -->
+        <div class="about-grid">
+            <!-- Left Side: Mission & Values -->
+            <div>
+                <!-- Mission Card -->
+                <section class="mission-card">
+                    <h3><i class="fa-solid fa-shield-halved" style="color:var(--primary-green)"></i> Our Mission</h3>
+                    <p>
+                        GreenGuard is a state-of-the-art smart environmental monitoring system designed to build clean, healthy, and resilient ecosystems in modern cities. We empower local citizens and municipal administrations with real-time tracking of fine atmospheric particulates, environmental alert forecasts, and gamified eco-friendly checklists to encourage collective action towards building a healthier tomorrow.
+                    </p>
+
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <h4>Accuracy</h4>
+                            <p>Delivering precise climate data gathered from IoT sensor registries.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fa-solid fa-people-carry-box"></i>
+                            <h4>Community</h4>
+                            <p>Encouraging community action programs for clean environment maintenance.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team Card -->
+                <section class="team-card">
+                    <h3><i class="fa-solid fa-people-group" style="color:var(--primary-green)"></i> Core Developers</h3>
+                    <div class="team-grid">
+                        <div class="member-item">
+                            <div class="member-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                            <h5>Rakibul Hasan</h5>
+                            <p>Project Lead</p>
+                        </div>
+                        <div class="member-item">
+                            <div class="member-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                            <h5>Rakibul Hasan</h5>
+                            <p>Backend Engineer</p>
+                        </div>
+                        <div class="member-item">
+                            <div class="member-avatar"><i class="fa-solid fa-user-pen"></i></div>
+                            <h5>Rakibul Hasan</h5>
+                            <p>UI/UX Designer</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <section class="contact-card">
+                <h3><i class="fa-solid fa-envelope"></i> Send Feedback</h3>
+                <form class="contact-form" id="about-contact-form">
+                    <div class="contact-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="contact-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="contact-group">
+                        <label for="contact-msg">Message</label>
+                        <textarea id="contact-msg" placeholder="Write your feedback/message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-contact-submit">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for About page handling -->
+    <script src="about.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+/* ================= AIR QUALITY PAGE STYLES ================= */
+
+/* Override/extend main content for air quality layout */
+.main-content {
+    background-color: var(--bg-light);
+}
+
+/* Page Badge */
+.page-title-badge {
+    display: inline-block;
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+/* AQI Overview Section (Large Card) */
+.aqi-overview-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 30px;
+}
+
+.aqi-details-left {
+    flex: 1.2;
+}
+
+.aqi-details-left h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.aqi-details-left .location {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.aqi-status-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.aqi-status-badge.poor {
+    background-color: var(--alert-orange);
+}
+
+.aqi-status-badge.good {
+    background-color: #2ecc71;
+}
+
+.aqi-status-badge.unhealthy {
+    background-color: var(--alert-red);
+}
+
+.aqi-status-badge.very-unhealthy {
+    background-color: #8e44ad;
+}
+
+.aqi-summary-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    max-width: 450px;
+}
+
+.aqi-gauge-center {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* AQI Scale Bar Component (matches reference image) */
+.aqi-scale-container {
+    width: 100%;
+    max-width: 380px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.aqi-scale-bar-wrapper {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.aqi-scale-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to right, #2ecc71, #f1c40f, #e67e22, #e74c3c, #8e44ad);
+}
+
+.aqi-scale-indicator {
+    position: absolute;
+    top: -4px; /* centers the 18px circle on 10px bar: (18-10)/2 = 4 */
+    left: 0%; /* updated via JS */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #2ecc71; /* updated via JS */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+    transition: left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.8s ease;
+    z-index: 2;
+}
+
+.aqi-scale-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.scale-label-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.scale-label-col .range {
+    font-size: 11px;
+    font-weight: 600;
+    color: #7f8c8d;
+    margin-bottom: 2px;
+}
+
+.scale-label-col .label {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Colors to match the provided image */
+.scale-label-col.good .label {
+    color: #27ae60;
+}
+
+.scale-label-col.moderate .label {
+    color: #d35400;
+}
+
+.scale-label-col.sensitive .label {
+    color: #b35f00;
+}
+
+.scale-label-col.unhealthy .label {
+    color: #c0392b;
+}
+
+.scale-label-col.very-unhealthy .label {
+    color: #7d3c98;
+}
+
+/* Circular AQI Indicator */
+.large-aqi-gauge {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.large-aqi-gauge svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.large-aqi-gauge circle {
+    fill: none;
+    stroke-width: 14;
+    stroke-linecap: round;
+}
+
+.large-aqi-gauge .bg-circle {
+    stroke: #edf2f7;
+}
+
+.large-aqi-gauge .progress-circle {
+    stroke: #e67e22; /* Color matches poor status */
+    stroke-dasharray: 452.4; /* 2 * PI * r (r=72) */
+    stroke-dashoffset: 144; /* Adjusted for value 142/500 */
+    transition: stroke-dashoffset 1s ease-out;
+}
+
+.aqi-number {
+    position: absolute;
+    text-align: center;
+}
+
+.aqi-number h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.aqi-number p {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Pollutants Section */
+.pollutants-section {
+    margin-bottom: 30px;
+}
+
+.pollutants-section h3,
+.advisories-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pollutant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.pollutant-card {
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.pollutant-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pollutant-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.pollutant-card .val {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin: 8px 0;
+}
+
+.pollutant-card .unit {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.pollutant-card .status-bar {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #edf2f7;
+    margin-top: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pollutant-card .status-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.pollutant-card .status-bar-fill.warning {
+    background-color: var(--alert-orange);
+}
+
+.pollutant-card .status-bar-fill.safe {
+    background-color: #2ecc71;
+}
+
+.pollutant-card .status-bar-fill.danger {
+    background-color: var(--alert-red);
+}
+
+/* Health Advisories Section */
+.advisories-section {
+    margin-bottom: 30px;
+}
+
+.advisory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.advisory-card {
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s;
+}
+
+.advisory-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+.advisory-icon {
+    font-size: 24px;
+    background-color: #f1f5f9;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advisory-icon.warning {
+    background-color: #fffaf0;
+    color: var(--alert-orange);
+}
+
+.advisory-icon.safe {
+    background-color: #eafaf1;
+    color: #2ecc71;
+}
+
+.advisory-content h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.advisory-content p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .aqi-overview-card {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    .aqi-details-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pollutant-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

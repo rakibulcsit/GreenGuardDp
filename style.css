@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================
+   1. RESET & BASIC LAYOUT
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b2e23; /* Matching solid deep green from the 2nd image */
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* ==========================================
+   2. SPLASH SCREEN WRAPPER
+   ========================================== */
+.splash-screen {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================
+   3. LOGO AND TYPOGRAPHY
+   ========================================== */
+.logo-container {
+    margin-bottom: 25px;
+}
+
+.logo-box {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-svg {
+    width: 55px;
+    height: 66px;
+    filter: drop-shadow(0 2px 8px rgba(163, 230, 53, 0.4));
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-top: 6px;
+    color: #a3e635; /* Lime green subtitle accent */
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   4. ENVIRONMENT BANNER (SMART ALIGNMENT)
+   ========================================== */
+.image-container {
+    width: 100%;
+    max-width: 720px; /* Restrict width to create banner effect */
+    height: 260px;    /* Cropped banner height */
+    margin: 25px auto;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.environment {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Smart Side-Fading Gradients: Blends the image seamlessly into the solid background */
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0b2e23 0%, rgba(11, 46, 35, 0) 18%, rgba(11, 46, 35, 0) 82%, #0b2e23 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ==========================================
+   5. BOTTOM TEXTS & Sleek Progress Bar
+   ========================================== */
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.loading-text {
+    font-size: 15px;
+    color: #cbd5e1; /* Soft slate gray */
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+.progress-bar {
+    width: 320px;
+    max-width: 80%;
+    height: 6px; /* Ultra-thin sleek progress bar */
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(163, 230, 53, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80, #a3e635);
+    border-radius: 10px;
+    animation: loading 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   6. RESPONSIVE POLISH
+   ========================================== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+    
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .image-container {
+        height: 180px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .progress-bar {
+        width: 250px;
+    }
+}

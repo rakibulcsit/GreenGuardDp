@@ -1,0 +1,313 @@
+/* ================= ALERTS PAGE STYLES ================= */
+
+.main-content {
+    background-color: var(--bg-light);
+}
+
+.page-title-badge {
+    display: inline-block;
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+/* Alerts Layout Grid */
+.alerts-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+/* Active Alerts Card */
+.alerts-list-card {
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+.card-header-flex h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alerts-count {
+    background-color: var(--alert-red);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+
+.alert-item-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border-left: 5px solid;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.alert-item-box:hover {
+    transform: translateX(3px);
+}
+
+/* Severity borders and backgrounds */
+.alert-item-box.danger {
+    background-color: #fff5h5; /* Soft Red */
+    background: #fff5f5;
+    border-left-color: var(--alert-red);
+}
+.alert-item-box.warning {
+    background-color: #fffaf0; /* Soft Orange */
+    border-left-color: var(--alert-orange);
+}
+.alert-item-box.info {
+    background-color: #f0f8ff; /* Soft Blue */
+    border-left-color: var(--alert-blue);
+}
+
+.alert-item-icon {
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.alert-item-box.danger .alert-item-icon { color: var(--alert-red); }
+.alert-item-box.warning .alert-item-icon { color: var(--alert-orange); }
+.alert-item-box.info .alert-item-icon { color: var(--alert-blue); }
+
+.alert-item-details {
+    flex-grow: 1;
+}
+
+.alert-item-details h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.alert-item-details p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.alert-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.alert-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.alert-action-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 14px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    transition: color 0.2s;
+}
+
+.alert-action-btn:hover {
+    color: var(--alert-red);
+}
+
+/* Preferences & Simulator Cards */
+.sidebar-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.alerts-panel-card {
+    background: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.alerts-panel-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
+}
+
+/* Switch styling */
+.pref-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.pref-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pref-label span {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.pref-label small {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* Custom Switch Toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .3s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-green);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* Simulator Form elements */
+.simulator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group select,
+.form-group input {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    background: #ffffff;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: var(--accent-green);
+}
+
+.btn-trigger-alert {
+    background-color: var(--primary-green);
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-trigger-alert:hover {
+    background-color: var(--primary-dark);
+}
+
+@media (max-width: 992px) {
+    .alerts-grid {
+        grid-template-columns: 1fr;
+    }
+}

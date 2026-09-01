@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Smart Environmental Monitoring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-area">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div class="logo-text">
+                <h2>GreenGuard</h2>
+                <p>Smart Environmental Monitoring</p>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="menu-item active"><a href="homepage.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+            <li class="menu-item"><a href="weather.html"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li class="menu-item"><a href="airquality.html"><i class="fa-solid fa-wind"></i> Air Quality</a></li>
+            <li class="menu-item"><a href="alerts.html"><i class="fa-solid fa-bell"></i> Alerts</a></li>
+            <li class="menu-item"><a href="tips.html"><i class="fa-solid fa-leaf"></i> Eco Tips</a></li>
+            <li class="menu-item"><a href="forecast.html"><i class="fa-solid fa-calendar-days"></i> Forecast</a></li>
+            <li class="menu-item"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+            <li class="menu-item"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            <li class="menu-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-earth-americas"></i>
+            <p><strong>Go Green, Stay Clean</strong><br>A better environment for a better tomorrow.</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="top-header">
+            <div class="tagline">
+                <i class="fa-solid fa-leaf"></i> Live Environment, Better Tomorrow
+            </div>
+            <div class="header-actions">
+                <i class="fa-solid fa-cloud-sun" style="color: #f1c40f;"></i> <span style="font-size:14px; font-weight:500;">°C</span>
+                <i class="fa-solid fa-moon theme-toggle" style="margin-left: 15px;"></i>
+                <i class="fa-solid fa-circle-user user-profile" style="margin-left: 15px; color: #0a6c3f; font-size: 24px;"></i>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name..." id="city-input">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </div>
+            <button class="location-btn"><i class="fa-solid fa-location-crosshairs"></i> Use My Location</button>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <div class="card weather-card">
+                <div class="location-info">
+                    <strong id="location-text" style="color: var(--text-dark); font-size: 14px;"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</strong><br>
+                    <span id="current-time" style="font-size: 11px;">20 May 2025 | 02:30 PM</span>
+                </div>
+                <div class="card-title" style="color: #2980b9;">
+                    <i class="fa-solid fa-cloud-sun-rain"></i> Weather Overview
+                </div>
+                <div class="weather-main">
+                    <div class="weather-status">
+                        <i class="fa-solid fa-cloud-sun" id="weather-status-icon"></i>
+                        <p id="weather-status-desc">Partly Cloudy</p>
+                    </div>
+                    <div class="temp-display">
+                        <h1 id="weather-temp">32°c</h1>
+                        <p id="weather-feels-like">Feels like 36°C</p>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-droplet" style="color:#3498db;"></i>
+                        <div class="detail-info">
+                            <p>Humidity</p>
+                            <h4 id="weather-humidity">65%</h4>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-wind" style="color:#2ecc71;"></i>
+                        <div class="detail-info">
+                            <p>Wind Speed</p>
+                            <h4 id="weather-wind">12 km/h</h4>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-eye" style="color:#9b59b6;"></i>
+                        <div class="detail-info">
+                            <p>Visibility</p>
+                            <h4 id="weather-visibility">8 km</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card aqi-card">
+                <div class="card-title" style="color: var(--primary-green);">
+                    <i class="fa-solid fa-leaf"></i> Air Quality Index
+                </div>
+                <div class="aqi-container">
+                    <div class="aqi-gauge">
+                        <svg viewBox="0 0 140 140">
+                            <circle class="bg-circle" cx="70" cy="70" r="54"></circle>
+                            <circle class="progress-circle" cx="70" cy="70" r="54" id="homepage-aqi-fill"></circle>
+                        </svg>
+                        <div class="aqi-value">
+                            <h2 id="homepage-aqi-val">142</h2>
+                            <p>AQI</p>
+                        </div>
+                    </div>
+                    <div class="aqi-status">
+                        <h3 id="homepage-aqi-desc">Poor</h3>
+                        <p id="homepage-aqi-pollutants">Air quality is unhealthy for sensitive groups.<br><small style="color:var(--text-muted)">Pollutants: PM2.5, PM10, O₃</small></p>
+                    </div>
+                </div>
+                <div class="aqi-scale">
+                    <div class="scale-bar"></div>
+                    <div class="scale-labels">
+                        <div>0-50<br><span style="color:#2ecc71">Good</span></div>
+                        <div>51-100<br><span style="color:#f1c40f">Moderate</span></div>
+                        <div>101-150<br><span style="color:#e67e22">Unhealthy for<br>Sensitive Groups</span></div>
+                        <div>151-200<br><span style="color:#e74c3c">Unhealthy</span></div>
+                        <div>201+<br><span style="color:#9b59b6">Very Unhealthy</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title" style="color: var(--alert-red);">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Environmental Alerts
+                </div>
+                
+                <div id="homepage-alerts-container">
+                    <div class="alert-item danger">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <div class="alert-text">
+                            <h4>Air quality is poor in your area.</h4>
+                            <p>Avoid outdoor activities and wear a mask when outside.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow-right"></i>
+                    </div>
+
+                    <div class="alert-item warning">
+                        <i class="fa-solid fa-temperature-high"></i>
+                        <div class="alert-text">
+                            <h4>High Temperature Alert</h4>
+                            <p>Drink more water and stay hydrated.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow-right"></i>
+                    </div>
+
+                    <div class="alert-item info">
+                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                        <div class="alert-text">
+                            <h4>Rain Possible</h4>
+                            <p>There is a chance of rain in the evening.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title" style="color: var(--primary-green);">
+                    <i class="fa-solid fa-lightbulb"></i> Smart Environmental Tips
+                </div>
+                
+                <div class="tip-item">
+                    <i class="fa-solid fa-head-side-mask"></i>
+                    <div class="tip-text">
+                        <p>Wear a mask when going outside to protect yourself.</p>
+                    </div>
+                </div>
+
+                <div class="tip-item">
+                    <i class="fa-solid fa-glass-water"></i>
+                    <div class="tip-text">
+                        <p>Drink plenty of water and stay hydrated.</p>
+                    </div>
+                </div>
+
+                <div class="tip-item">
+                    <i class="fa-solid fa-seedling"></i>
+                    <div class="tip-text">
+                        <p>Plant more trees and help keep the environment clean.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="homepage.js"></script>
+</body>
+</html>

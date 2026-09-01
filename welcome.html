@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard - Laptop View</title>
+    <!-- Linking the external CSS file -->
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+
+    <!-- Background Image Container -->
+    <div class="bg"></div>
+
+    <!-- Main Fullscreen Laptop Container -->
+    <div class="laptop-screen-container">
+        
+        <!-- Top Section: Logo and Typography -->
+        <div class="main-content">
+            <div class="welcome-text">Welcome to</div>
+            
+            <div class="logo-area">
+                <span class="leaf-icon">🌱</span>
+                <h1 class="brand-name">GreenGuard</h1>
+            </div>
+
+            <p class="tagline">
+                Your smart partner for environmental monitoring and a healthier tomorrow.
+            </p>
+        </div>
+
+        <!-- Spacer for the background illustration -->
+        <div class="illustration-spacer"></div>
+
+        <!-- Bottom Section: Wide Full-Width Buttons -->
+        <div class="action-area">
+            <button class="btn btn-primary" id="btn-get-started">Get Started</button>
+            <button class="btn btn-secondary" id="btn-learn-more">Learn More</button>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('btn-get-started').addEventListener('click', () => {
+            window.location.href = 'homepage.html';
+        });
+        document.getElementById('btn-learn-more').addEventListener('click', () => {
+            alert('GreenGuard helps you track air quality, weather, and environmental safety in real time.');
+        });
+    </script>
+
+</body>
+</html>

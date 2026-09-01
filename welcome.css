@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   1. RESET & VARIABLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #012820; /* Fallback theme-matching dark green color */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #ffffff;
+}
+
+/* ==========================================
+   2. BACKGROUND IMAGE SETUP
+   ========================================== */
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('environment.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: brightness(0.65) contrast(1.05); /* Slight dark overlay for text readability */
+    transition: all 0.5s ease;
+}
+
+/* ==========================================
+   3. LAYOUT CONTAINER
+   ========================================== */
+.laptop-screen-container {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 20px 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================
+   4. TOP CONTENT (HEADER & TYPOGRAPHY)
+   ========================================== */
+.main-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(1, 40, 32, 0.45); /* Ultra-subtle background glass layer */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px 40px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.welcome-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #a3e635; /* Soft lime-green accent color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.leaf-icon {
+    font-size: 40px;
+    animation: pulseFloat 3s ease-in-out infinite;
+}
+
+.brand-name {
+    font-size: 56px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 30%, #a3e635 100%);
+     background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+.tagline {
+    font-size: 18px;
+    color: #e2e8f0;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* ==========================================
+   5. SPACER (MAKES ROOM FOR GLOBE IN BACKGROUND)
+   ========================================== */
+.illustration-spacer {
+    height: 30vh; /* Dynamic space so that the center of environment.png is visible */
+    pointer-events: none;
+}
+
+/* ==========================================
+   6. BOTTOM ACTION BUTTONS
+   ========================================== */
+.action-area {
+    width: 100%;
+    max-width: 500px; /* Focused button alignment */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 10;
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.btn {
+    width: 100%;
+    padding: 16px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Primary Button: Glowing Emerald Solid */
+.btn-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.45);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Button: Premium Glassmorphism */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    color: #012820;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   7. ANIMATIONS
+   ========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-6px) rotate(5deg);
+    }
+}
+
+/* ==========================================
+   8. RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================== */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px 25px;
+    }
+    
+    .brand-name {
+        font-size: 42px;
+    }
+    
+    .welcome-text {
+        font-size: 16px;
+    }
+    
+    .tagline {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+}
